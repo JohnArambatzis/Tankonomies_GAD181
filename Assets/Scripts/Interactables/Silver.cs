@@ -46,7 +46,7 @@ public class Silver : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
             gameObject.GetComponent<CircleCollider2D>().enabled = true;
             gameObject.GetComponent<CapsuleCollider2D>().enabled = true;
-            silverCanvas.GetComponent<Canvas>().enabled = false;
+            silverCanvas.GetComponent<Canvas>().enabled = true;
         }
     }
 }
