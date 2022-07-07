@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
         {
             timer -= Time.deltaTime; // Make timer count down
         }
-        if (Input.GetButtonDown("Fire1") && timer <= 0f) // If LeftClick & timer is 0 then you can fire
+        if (Input.GetButton("Fire1") && timer <= 0f) // If LeftClick & timer is 0 then you can fire (changed it to work with holdling down left click)
         {
             if (shootSpeed == false) // If the bool shootSpeed is false the do this if statement
             {
