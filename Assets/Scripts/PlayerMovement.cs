@@ -12,8 +12,8 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
+        float horizontalInput = Input.GetAxisRaw("Horizontal"); // Raw movement for left and right
+        float verticalInput = Input.GetAxisRaw("Vertical"); // Raw movement for up and down
 
         Vector2 moveDirection = new Vector2(horizontalInput, verticalInput);
         float inputMagnitude = Mathf.Clamp01(moveDirection.magnitude);
@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
         transform.Translate(moveDirection * playerSpeed * inputMagnitude * Time.deltaTime, Space.World);
 
 
-        animator.SetFloat("Speed", Mathf.Abs(inputMagnitude));
+        animator.SetFloat("Speed", Mathf.Abs(inputMagnitude)); // Checks speed to toggle between idle animation and moving animation
 
 
         if (moveDirection != Vector2.zero)

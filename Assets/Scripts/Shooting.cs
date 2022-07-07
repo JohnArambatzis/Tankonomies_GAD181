@@ -17,11 +17,11 @@ public class Shooting : MonoBehaviour
     {
         if (timer >= 0f)
         {
-            timer -= Time.deltaTime;
+            timer -= Time.deltaTime; // Make timer count down
         }
-        if (Input.GetButtonDown("Fire1") && timer <= 0f)
+        if (Input.GetButtonDown("Fire1") && timer <= 0f) // If LeftClick & timer is 0 then you can fire
         {
-            if (shootSpeed == false)
+            if (shootSpeed == false) // If the bool shootSpeed is false the do this if statement
             {
                 Shoot();
                 timer = 1f;
@@ -36,7 +36,7 @@ public class Shooting : MonoBehaviour
 
     void Shoot()
     {
-        if (Time.timeScale == 1)
+        if (Time.timeScale == 1) // This makes it so you can only shoot if the in game time is not paused when you try to fire, so you dont shoot while in the shop or paused
         {
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
             Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();

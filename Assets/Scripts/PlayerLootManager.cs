@@ -25,7 +25,7 @@ public class PlayerLootManager : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.tag == "Coal Collect")
+        if (collision.transform.tag == "Coal Collect") // If you collide with any object with this tag
         {
             coal = coal + 1;
             Destroy(collision.gameObject, 0.1f);
@@ -39,19 +39,19 @@ public class PlayerLootManager : MonoBehaviour
         }
         silverText.text = silver.ToString();
     }
-    public void RefinementTabOpenShop1()
+    public void RefinementTabOpenShop1() // Open the tab in the shop for the refinements
     {
         refinementTabShop1.SetActive(true);
         refinementTabButtonOpenShop1.SetActive(false);
         refinementTabButtonCloseShop1.SetActive(true);
     }
-    public void RefinementTabCloseShop1()
+    public void RefinementTabCloseShop1() // Close the tab in the shop for the refinements
     {
         refinementTabShop1.SetActive(false);
         refinementTabButtonOpenShop1.SetActive(true);
         refinementTabButtonCloseShop1.SetActive(false);
     }
-    public void CoalSellShop1()
+    public void CoalSellShop1() // All of the bellow for each shop button to buy or sell items
     {
         if (coal >= 1)
         {
@@ -102,6 +102,7 @@ public class PlayerLootManager : MonoBehaviour
             gold -= 20;
 
             player.GetComponent<Shooting>().shootSpeed = true;
+            player.GetComponent<Shooting>().timer = 0.1f;
         }
         goldText.text = gold.ToString();
         copperIngotText.text = copperIngot.ToString();
