@@ -31,5 +31,14 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
 
+        if (inputMagnitude == 0)
+        {
+            Vector3 mouseScreen = Input.mousePosition;
+            Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
+
+            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg - 90);
+        }
+        
+
     }
 }
