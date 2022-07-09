@@ -670,7 +670,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: RefinementTabOpenShop1
         m_Mode: 1
@@ -1508,7 +1508,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593403}
         m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
         m_MethodName: TogglePause
         m_Mode: 1
@@ -1761,7 +1761,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: CoalSellShop1
         m_Mode: 1
@@ -2578,7 +2578,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: CopperIngotRefineShop1
         m_Mode: 1
@@ -3377,7 +3377,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: CopperBuyShop1
         m_Mode: 1
@@ -3980,7 +3980,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593403}
         m_TargetAssemblyTypeName: PanelController, Assembly-CSharp
         m_MethodName: TogglePause
         m_Mode: 1
@@ -4774,6 +4774,17 @@ MonoBehaviour:
   isPaused: 0
   pausePanel: {fileID: 667382337}
   shopPanel1: {fileID: 1098969691}
+--- !u!114 &1479593404 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916979198636558590, guid: 6925097f8c4c3664489dd212f564b553, type: 3}
+  m_PrefabInstance: {fileID: 232617152}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479593381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 966f0856a6cef1a42ab454551bf4d3ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1493728491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5219,7 +5230,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: RefinementTabCloseShop1
         m_Mode: 1
@@ -5799,7 +5810,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: TankFireSpeedUpgradeShop1
         m_Mode: 1
@@ -6422,7 +6433,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1479593404}
         m_TargetAssemblyTypeName: PlayerLootManager, Assembly-CSharp
         m_MethodName: SilverSellShop1
         m_Mode: 1
