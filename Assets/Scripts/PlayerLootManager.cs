@@ -10,12 +10,16 @@ public class PlayerLootManager : MonoBehaviour
     public Text copperText;
     public Text copperIngotText;
     public Text silverText;
+    public Text silverIngotText;
+    public Text crystalText;
 
     public int gold = 0;
     public int coal = 0;
     public int copper = 0;
     public int copperIngot = 0;
     public int silver = 0;
+    public int silverIngot = 0;
+    public int crystal = 0;
 
     public GameObject player;
 
@@ -35,6 +39,13 @@ public class PlayerLootManager : MonoBehaviour
             Destroy(collision.gameObject, 0.1f);
         }
         silverText.text = silver.ToString();
+
+        if (collision.transform.tag == "Crystal Collect")
+        {
+            crystal = crystal + 1;
+            Destroy(collision.gameObject, 0.1f);
+        }
+        crystalText.text = crystal.ToString();
     }
     public void CoalSellShop1() // All of the bellow for each shop button to buy or sell items
     {
@@ -51,9 +62,19 @@ public class PlayerLootManager : MonoBehaviour
         if (silver >= 1)
         {
             silver -= 1;
-            gold += 5;
+            gold += 3;
         }
         silverText.text = silver.ToString();
+        goldText.text = gold.ToString();
+    }
+    public void CrystalSellShop1()
+    {
+        if (crystal >= 1)
+        {
+            crystal -= 1;
+            gold += 6;
+        }
+        crystalText.text = crystal.ToString();
         goldText.text = gold.ToString();
     }
     public void CopperBuyShop1()
@@ -64,6 +85,16 @@ public class PlayerLootManager : MonoBehaviour
             copper += 1;
         }
         copperText.text = copper.ToString();
+        goldText.text = gold.ToString();
+    }
+    public void CrystalBuyShop1()
+    {
+        if (gold >= 10)
+        {
+            gold -= 10;
+            crystal += 1;
+        }
+        crystalText.text = crystal.ToString();
         goldText.text = gold.ToString();
     }
     public void CopperIngotRefineShop2()
@@ -78,6 +109,33 @@ public class PlayerLootManager : MonoBehaviour
         goldText.text = gold.ToString();
         copperText.text = copper.ToString();
         copperIngotText.text = copperIngot.ToString();
+    }
+    public void SilverIngotRefineShop2()
+    {
+        if (silver >= 5 && coal >= 1)
+        {
+            silver -= 5;
+            coal -= 1;
+            silverIngot += 1;
+        }
+        coalText.text = coal.ToString();
+        goldText.text = gold.ToString();
+        silverText.text = silver.ToString();
+        silverIngotText.text = silverIngot.ToString();
+    }
+    public void BulletCosmeticShop2()
+    {
+        if (silverIngot >= 2 && gold >= 20 && crystal >= 4)
+        {
+            silverIngot -= 2;
+            gold -= 20;
+            crystal -= 4;
+
+            player.GetComponent<Shooting>().bulletCosmetic = true;
+        }
+        goldText.text = gold.ToString();
+        silverIngotText.text = silverIngot.ToString();
+        crystalText.text = crystal.ToString();
     }
     public void TankFireSpeedUpgradeShop2()
     {

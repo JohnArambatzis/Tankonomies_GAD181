@@ -7,11 +7,13 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
 
     public GameObject bulletPrefab;
+    public GameObject happyBulletPrefab;
 
     public float bulletForce = 20f;
     public float timer = 1f;
 
     public bool shootSpeed;
+    public bool bulletCosmetic;
 
     void Update()
     {
@@ -38,9 +40,18 @@ public class Shooting : MonoBehaviour
     {
         if (Time.timeScale == 1) // This makes it so you can only shoot if the in game time is not paused when you try to fire, so you dont shoot while in the shop or paused
         {
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
-            Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
-            rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            if (bulletCosmetic == false)
+            {
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            }
+            if (bulletCosmetic == true)
+            {
+                GameObject bullet = Instantiate(happyBulletPrefab, firePoint.position, firePoint.rotation);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+            }
         }
         
     }
