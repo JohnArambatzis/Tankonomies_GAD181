@@ -23,6 +23,9 @@ public class PlayerLootManager : MonoBehaviour
 
     public GameObject player;
 
+    public GameObject bulletSpeedUpgradeButton;
+    public GameObject bulletCosmeticUnlockButton;
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -132,6 +135,7 @@ public class PlayerLootManager : MonoBehaviour
             crystal -= 4;
 
             player.GetComponent<Shooting>().bulletCosmetic = true;
+            bulletCosmeticUnlockButton.GetComponent<Button>().interactable = false;
         }
         goldText.text = gold.ToString();
         silverIngotText.text = silverIngot.ToString();
@@ -146,6 +150,7 @@ public class PlayerLootManager : MonoBehaviour
 
             player.GetComponent<Shooting>().shootSpeed = true;
             player.GetComponent<Shooting>().timer = 0.1f;
+            bulletSpeedUpgradeButton.GetComponent<Button>().interactable = false;
         }
         goldText.text = gold.ToString();
         copperIngotText.text = copperIngot.ToString();
