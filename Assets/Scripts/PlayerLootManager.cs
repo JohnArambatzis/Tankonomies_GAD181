@@ -18,9 +18,6 @@ public class PlayerLootManager : MonoBehaviour
     public int silver = 0;
 
     public GameObject player;
-    public GameObject refinementTabShop1;
-    public GameObject refinementTabButtonOpenShop1;
-    public GameObject refinementTabButtonCloseShop1;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -38,18 +35,6 @@ public class PlayerLootManager : MonoBehaviour
             Destroy(collision.gameObject, 0.1f);
         }
         silverText.text = silver.ToString();
-    }
-    public void RefinementTabOpenShop1() // Open the tab in the shop for the refinements
-    {
-        refinementTabShop1.SetActive(true);
-        refinementTabButtonOpenShop1.SetActive(false);
-        refinementTabButtonCloseShop1.SetActive(true);
-    }
-    public void RefinementTabCloseShop1() // Close the tab in the shop for the refinements
-    {
-        refinementTabShop1.SetActive(false);
-        refinementTabButtonOpenShop1.SetActive(true);
-        refinementTabButtonCloseShop1.SetActive(false);
     }
     public void CoalSellShop1() // All of the bellow for each shop button to buy or sell items
     {
@@ -81,7 +66,7 @@ public class PlayerLootManager : MonoBehaviour
         copperText.text = copper.ToString();
         goldText.text = gold.ToString();
     }
-    public void CopperIngotRefineShop1()
+    public void CopperIngotRefineShop2()
     {
         if (copper >= 5 && coal >= 1)
         {
@@ -94,7 +79,7 @@ public class PlayerLootManager : MonoBehaviour
         copperText.text = copper.ToString();
         copperIngotText.text = copperIngot.ToString();
     }
-    public void TankFireSpeedUpgradeShop1()
+    public void TankFireSpeedUpgradeShop2()
     {
         if (copperIngot >= 1 && gold >= 20)
         {
