@@ -44,14 +44,14 @@ public class PanelController : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0;
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
         }
         else
         {
             Time.timeScale = 1;
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
+            //Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.visible = false;
 
             pausePanel.SetActive(false);
             shopPanel1.SetActive(false);
