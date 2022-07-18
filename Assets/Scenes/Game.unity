@@ -21134,7 +21134,7 @@ MonoBehaviour:
   silverText: {fileID: 1359207784}
   silverIngotText: {fileID: 437121187}
   crystalText: {fileID: 1310696089}
-  gold: 1000
+  gold: 0
   coal: 0
   copper: 0
   copperIngot: 0
