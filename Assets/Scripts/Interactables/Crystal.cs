@@ -31,6 +31,22 @@ public class Crystal : MonoBehaviour
                 Instantiate(crystalCollect, transform.position, Quaternion.identity);
             }
         }
+
+        if (collision.transform.tag == "Bullet 2")
+        {
+            crystalHealth -= 2;
+            crystalHealthText.text = crystalHealth.ToString();
+
+            if (crystalHealth <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                crystalCanvas.GetComponent<Canvas>().enabled = false;
+
+                Instantiate(crystalCollect, transform.position, Quaternion.identity);
+            }
+        }
     }
     private void Update()
     {

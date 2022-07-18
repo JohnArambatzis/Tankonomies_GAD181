@@ -31,6 +31,22 @@ public class Coal : MonoBehaviour
                 Instantiate(coalCollect, transform.position, Quaternion.identity);
             }
         }
+
+        if (collision.transform.tag == "Bullet 2")
+        {
+            coalHealth -= 2;
+            coalHealthText.text = coalHealth.ToString();
+
+            if (coalHealth <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                coalCanvas.GetComponent<Canvas>().enabled = false;
+
+                Instantiate(coalCollect, transform.position, Quaternion.identity);
+            }
+        }
     }
     private void Update()
     {

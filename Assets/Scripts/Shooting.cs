@@ -13,8 +13,19 @@ public class Shooting : MonoBehaviour
     public float timer = 1f;
 
     public bool shootSpeed;
+    public bool bulletDamage;
     public bool bulletCosmetic;
 
+
+    private void Start()
+    {
+        shootSpeed = false;
+        bulletDamage = false;
+        bulletCosmetic = false;
+
+        bulletPrefab.tag = "Bullet";
+        happyBulletPrefab.tag = "Bullet";
+    }
     void Update()
     {
         if (timer >= 0f)
@@ -34,6 +45,15 @@ public class Shooting : MonoBehaviour
                 timer = 0.6f;
             }
         }
+        if (bulletDamage == true)
+        {
+            bulletPrefab.tag = "Bullet 2";
+            happyBulletPrefab.tag = "Bullet 2";
+
+            bulletDamage = false;
+        }
+        
+
     }
 
     void Shoot()
@@ -54,5 +74,10 @@ public class Shooting : MonoBehaviour
             }
         }
         
+    }
+    void BulletDamage2()
+    {
+        bulletPrefab.tag = "Bullet 2";
+        happyBulletPrefab.tag = "Bullet 2";
     }
 }

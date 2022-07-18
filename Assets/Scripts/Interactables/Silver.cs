@@ -30,6 +30,22 @@ public class Silver : MonoBehaviour
                 Instantiate(silverCollect, transform.position, Quaternion.identity);
             }
         }
+
+        if (collision.transform.tag == "Bullet 2")
+        {
+            silverHealth -= 2;
+            silverHealthText.text = silverHealth.ToString();
+
+            if (silverHealth <= 0)
+            {
+                gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                gameObject.GetComponent<CircleCollider2D>().enabled = false;
+                gameObject.GetComponent<CapsuleCollider2D>().enabled = false;
+                silverCanvas.GetComponent<Canvas>().enabled = false;
+
+                Instantiate(silverCollect, transform.position, Quaternion.identity);
+            }
+        }
     }
     private void Update()
     {

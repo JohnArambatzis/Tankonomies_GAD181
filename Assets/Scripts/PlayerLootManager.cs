@@ -24,7 +24,9 @@ public class PlayerLootManager : MonoBehaviour
     public GameObject player;
 
     public GameObject bulletSpeedUpgradeButton;
+    public GameObject bulletDamageUpgradeButton;
     public GameObject bulletCosmeticUnlockButton;
+    
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -163,6 +165,19 @@ public class PlayerLootManager : MonoBehaviour
             bulletSpeedUpgradeButton.GetComponent<Button>().interactable = false;
         }
         goldText.text = gold.ToString();
+        copperIngotText.text = copperIngot.ToString();
+    }
+    public void TankBulletDamageUpgradeShop2()
+    {
+        if (copperIngot >= 3 && crystal >= 5)
+        {
+            copperIngot -= 3;
+            crystal -= 5;
+
+            player.GetComponent<Shooting>().bulletDamage = true;
+            bulletDamageUpgradeButton.GetComponent<Button>().interactable = false;
+        }
+        crystalText.text = crystal.ToString();
         copperIngotText.text = copperIngot.ToString();
     }
 }
