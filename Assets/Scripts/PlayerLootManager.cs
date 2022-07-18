@@ -80,6 +80,16 @@ public class PlayerLootManager : MonoBehaviour
         crystalText.text = crystal.ToString();
         goldText.text = gold.ToString();
     }
+    public void CopperSellShop1()
+    {
+        if (copper >= 1)
+        {
+            gold += 3;
+            copper -= 1;
+        }
+        copperText.text = copper.ToString();
+        goldText.text = gold.ToString();
+    }
     public void CopperBuyShop1()
     {
         if (gold >= 5)
