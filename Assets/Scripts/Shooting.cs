@@ -37,12 +37,12 @@ public class Shooting : MonoBehaviour
             if (shootSpeed == false) // If the bool shootSpeed is false the do this if statement
             {
                 Shoot();
-                timer = 1f;
+                timer = 0.9f;
             }
             if (shootSpeed == true)
             {
                 Shoot();
-                timer = 0.6f;
+                timer = 0.5f;
             }
         }
         if (bulletDamage == true)
