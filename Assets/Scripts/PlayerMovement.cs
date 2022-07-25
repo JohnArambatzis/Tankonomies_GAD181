@@ -11,7 +11,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
         float horizontalInput = Input.GetAxisRaw("Horizontal"); // Raw movement for left and right
         float verticalInput = Input.GetAxisRaw("Vertical"); // Raw movement for up and down
 
@@ -30,14 +29,14 @@ public class PlayerMovement : MonoBehaviour
             Quaternion toRotation = Quaternion.LookRotation(Vector3.forward, moveDirection);
             transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
         }
-
+        /*  old method of aiming
         if (inputMagnitude == 0)
         {
-            Vector3 mouseScreen = Input.mousePosition;
-            Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
+            //Vector3 mouseScreen = Input.mousePosition;
+            //Vector3 mouse = Camera.main.ScreenToWorldPoint(mouseScreen);
 
-            transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg - 90);
-        }
+            //transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(mouse.y, mouse.x) * Mathf.Rad2Deg - 90);
+        }*/
         
 
     }
