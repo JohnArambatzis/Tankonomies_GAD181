@@ -169,9 +169,9 @@ public class PlayerLootManager : MonoBehaviour
     }
     public void TankBulletDamageUpgradeShop2()
     {
-        if (copperIngot >= 3 && crystal >= 5)
+        if (copperIngot >= 1 && crystal >= 5)
         {
-            copperIngot -= 3;
+            copperIngot -= 1;
             crystal -= 5;
 
             player.GetComponent<Shooting>().bulletDamage = true;

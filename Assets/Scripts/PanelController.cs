@@ -10,6 +10,7 @@ public class PanelController : MonoBehaviour
 
     public GameObject shopPanel1;
     public GameObject shopPanel2;
+    public GameObject shopPanel3;
 
     void Start()
     {
@@ -43,6 +44,14 @@ public class PanelController : MonoBehaviour
             if (Input.GetKey(KeyCode.E) && !isPaused)
             {
                 shopPanel2.SetActive(true);
+                TogglePause();
+            }
+        }
+        if (collision.transform.tag == "Shop 3")
+        {
+            if (Input.GetKey(KeyCode.E) && !isPaused)
+            {
+                shopPanel3.SetActive(true);
                 TogglePause();
             }
         }
