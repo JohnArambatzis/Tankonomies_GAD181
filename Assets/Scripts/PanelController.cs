@@ -75,6 +75,7 @@ public class PanelController : MonoBehaviour
             pausePanel.SetActive(false);
             shopPanel1.SetActive(false);
             shopPanel2.SetActive(false);
+            shopPanel3.SetActive(false);
         }
     }
 }
