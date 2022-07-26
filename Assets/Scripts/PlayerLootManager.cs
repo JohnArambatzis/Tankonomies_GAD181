@@ -230,4 +230,33 @@ public class PlayerLootManager : MonoBehaviour
         crystalText.text = crystal.ToString();
         copperIngotText.text = copperIngot.ToString();
     }
+
+
+
+
+    //CHEATS
+
+    public void GoldCheat()
+    {
+        gold += 10;
+        goldText.text = gold.ToString();
+    }
+
+    public void CoalCheat()
+    {
+        coal += 10;
+        coalText.text = coal.ToString();
+    }
+
+    public void CopperCheat()
+    {
+        copper += 10;
+        copperText.text = copper.ToString();
+    }
+
+    public void SilverCheat()
+    {
+        silver += 10;
+        silverText.text = silver.ToString();
+    }
 }
