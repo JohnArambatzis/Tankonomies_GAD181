@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
 
     public GameObject bulletPrefab;
     public GameObject happyBulletPrefab;
+    public GameObject bulletSound;
 
     public float bulletForce = 20f;
     public float timer = 1f;
@@ -65,12 +66,16 @@ public class Shooting : MonoBehaviour
                 GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                 rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+                Instantiate(bulletSound);
             }
             if (bulletCosmetic == true)
             {
                 GameObject bullet = Instantiate(happyBulletPrefab, firePoint.position, firePoint.rotation);
                 Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
                 rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+
+                Instantiate(bulletSound);
             }
         }
         

@@ -26,8 +26,14 @@ public class PlayerLootManager : MonoBehaviour
     public GameObject bulletSpeedUpgradeButton;
     public GameObject bulletDamageUpgradeButton;
     public GameObject bulletCosmeticUnlockButton;
-    
 
+    public AudioClip[] audioClipArray;
+    private AudioSource source;
+
+    void Start()
+    {
+        source = gameObject.GetComponent<AudioSource>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,6 +64,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             coal -= 1;
             gold += 2;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         coalText.text = coal.ToString();
         goldText.text = gold.ToString();
@@ -68,6 +78,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             silver -= 1;
             gold += 3;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         silverText.text = silver.ToString();
         goldText.text = gold.ToString();
@@ -78,6 +92,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             crystal -= 1;
             gold += 6;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         crystalText.text = crystal.ToString();
         goldText.text = gold.ToString();
@@ -88,6 +106,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             gold += 3;
             copper -= 1;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         copperText.text = copper.ToString();
         goldText.text = gold.ToString();
@@ -98,6 +120,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             gold -= 5;
             copper += 1;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         copperText.text = copper.ToString();
         goldText.text = gold.ToString();
@@ -108,6 +134,10 @@ public class PlayerLootManager : MonoBehaviour
         {
             gold -= 10;
             crystal += 1;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         crystalText.text = crystal.ToString();
         goldText.text = gold.ToString();
@@ -119,6 +149,10 @@ public class PlayerLootManager : MonoBehaviour
             copper -= 5;
             coal -= 1;
             copperIngot += 1;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         coalText.text = coal.ToString();
         goldText.text = gold.ToString();
@@ -132,13 +166,17 @@ public class PlayerLootManager : MonoBehaviour
             silver -= 5;
             coal -= 1;
             silverIngot += 1;
+
+            source.clip = audioClipArray[0];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         coalText.text = coal.ToString();
         goldText.text = gold.ToString();
         silverText.text = silver.ToString();
         silverIngotText.text = silverIngot.ToString();
     }
-    public void BulletCosmeticShop2()
+    public void BulletCosmeticShop3()
     {
         if (silverIngot >= 2 && gold >= 20 && crystal >= 4)
         {
@@ -148,6 +186,10 @@ public class PlayerLootManager : MonoBehaviour
 
             player.GetComponent<Shooting>().bulletCosmetic = true;
             bulletCosmeticUnlockButton.GetComponent<Button>().interactable = false;
+
+            source.clip = audioClipArray[1];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         goldText.text = gold.ToString();
         silverIngotText.text = silverIngot.ToString();
@@ -163,6 +205,10 @@ public class PlayerLootManager : MonoBehaviour
             player.GetComponent<Shooting>().shootSpeed = true;
             player.GetComponent<Shooting>().timer = 0.1f;
             bulletSpeedUpgradeButton.GetComponent<Button>().interactable = false;
+
+            source.clip = audioClipArray[1];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         goldText.text = gold.ToString();
         copperIngotText.text = copperIngot.ToString();
@@ -176,6 +222,10 @@ public class PlayerLootManager : MonoBehaviour
 
             player.GetComponent<Shooting>().bulletDamage = true;
             bulletDamageUpgradeButton.GetComponent<Button>().interactable = false;
+
+            source.clip = audioClipArray[1];
+            source.PlayOneShot(source.clip);
+            source.Play();
         }
         crystalText.text = crystal.ToString();
         copperIngotText.text = copperIngot.ToString();
